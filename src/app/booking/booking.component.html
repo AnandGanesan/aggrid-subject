@@ -1,0 +1,11 @@
+<p>booking works!</p>
+<ul *ngFor="let row of compRow; let i = index">
+    <li>
+        <div id="{{i}}">
+            <input id={{row.name}} type="text" class="form-control" (input)="onSearchChange($event)">
+            <button id={{row.name+i}} name={{row.name}} (click)='buttonListener($event)'>{{row.name}}</button>
+            <label *ngIf="row.hit">Hit</label>
+            <label *ngIf="!row.hit">{{row.label}}</label>
+        </div>
+    </li>
+</ul>
